@@ -1,7 +1,8 @@
 'use client';
 
 import { OneRadioGroup } from '@/shared/ui/inputs/RadioGroup';
-import { IOption } from '@/shared/ui/inputs/RadioGroup/OneRadioGroup.declaration';
+import { IOption } from '@/shared/ui/inputs/RadioGroup/RadioGroup.declaration';
+import { CheckboxGroup } from '@/shared/ui/inputs/CheckboxGroup';
 import { RangeInput } from '@/shared/ui/inputs/RangeInput';
 import Image from 'next/image';
 import Slider from 'rc-slider';
@@ -29,16 +30,41 @@ export default function Home() {
     },
   ];
 
-  const [radio, setRadio] = useState(OptionsData[0]);
+  const Intakes: IOption[] =  [
+    {
+      id: 1,
+      text: 'Завтрак',
+    },
+    {
+      id: 2,
+      text: 'Обед',
+    },
+    {
+      id: 3,
+      text: 'Ужин',
+    },
+    {
+      id: 4,
+      text: 'Перекус',
+    },
+  ]
 
-  console.log(radio)
+  const [radio, setRadio] = useState<IOption>();
+
+  const handleOnChange = (value: any) => {
+    setRadio(value);
+  };
+
+  // console.log(radio)
+  // console.log(radio)
   return (
     <main>
       Main Page
       <div className="w-160">
         {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
       </div>
-      <OneRadioGroup options={OptionsData} value={radio} onChange={setRadio}/>
+      {/* <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/> */}
+      <CheckboxGroup options={Intakes}/>
     </main>
   );
 }

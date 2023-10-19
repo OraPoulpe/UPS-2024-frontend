@@ -1,1 +1,1 @@
-export { OneRadioGroup } from './OneRadioGroup'
+export { OneRadioGroup } from './RadioGroup'

@@ -5,7 +5,7 @@ export interface IOption {
 
 export interface IOneRadioGroupProps {
   options: IOption[];
-  value: IOption;
+  value: IOption | undefined;
   onChange(props: any): void;
 }
 
