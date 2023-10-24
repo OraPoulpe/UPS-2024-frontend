@@ -1,10 +1,15 @@
 import { ChangeEvent, FC } from 'react';
-import {StyledCheckboxInput } from './Checkbox.style';
+import { StyledCheckboxInput } from './Checkbox.style';
 import { ICheckBoxProps } from './Checkbox.declaration';
 import { NotCheckIcon } from './icons/NotCheck';
 import { CheckIcon } from './icons/Check';
 
-export const CheckBox: FC<ICheckBoxProps> = ({ onChange, id, checked }) => {
+export const CheckBox: FC<ICheckBoxProps> = ({
+  onChange,
+  id,
+  checked,
+  styled=false,
+}) => {
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const input = e.target as HTMLInputElement;
     onChange(id, input.checked);
@@ -16,7 +21,7 @@ export const CheckBox: FC<ICheckBoxProps> = ({ onChange, id, checked }) => {
         type="checkbox"
         onChange={(e) => handleOnChange(e)}
       />
-      {checked ? <CheckIcon /> : <NotCheckIcon />}
+      {styled && <>{checked ? <CheckIcon /> : <NotCheckIcon />}</>}
     </>
   );
 };

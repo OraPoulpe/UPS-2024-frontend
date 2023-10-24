@@ -8,6 +8,17 @@ import Image from 'next/image';
 import Slider from 'rc-slider';
 import { useState } from 'react';
 
+import br_1 from '../../public/data/images/food/breakfast/br_1.png';
+import br_2 from '../../public/data/images/food/breakfast/br_2.png';
+import br_3 from '../../public/data/images/food/breakfast/br_3.png';
+import tea from '../../public/data/images/food/tea.png';
+import { ImageChoice } from '@/shared/ui/inputs/ImageChoice';
+import {
+  IImage,
+  IImageChoiceProps,
+} from '@/shared/ui/inputs/ImageChoice/ImageChoice.declaration';
+import { ImageCell } from '@/entities/search/components/ImageCell';
+
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
 
@@ -30,7 +41,7 @@ export default function Home() {
     },
   ];
 
-  const Intakes: IOption[] =  [
+  const Intakes: IOption[] = [
     {
       id: 1,
       text: 'Завтрак',
@@ -47,7 +58,7 @@ export default function Home() {
       id: 4,
       text: 'Перекус',
     },
-  ]
+  ];
 
   const [radio, setRadio] = useState<IOption>();
 
@@ -57,6 +68,17 @@ export default function Home() {
 
   // console.log(radio)
   // console.log(radio)
+
+  const images: IImage[] = [
+    { src: tea.src, name: 'Йогурт', id: 10 },
+    { src: br_1.src, name: 'Йогурт', id: 1 },
+    { src: br_2.src, name: 'Йогурт', id: 2 },
+    { src: br_3.src, name: 'Йогурт', id: 3 },
+    { src: br_3.src, name: 'Йогурт', id: 4 },
+    { src: br_3.src, name: 'Йогурт', id: 5 },
+    { src: br_3.src, name: 'Йогурт', id: 6 },
+  ];
+
   return (
     <main>
       Main Page
@@ -64,7 +86,14 @@ export default function Home() {
         {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
       </div>
       {/* <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/> */}
-      <CheckboxGroup options={Intakes}/>
+      {/* <CheckboxGroup options={Intakes}/> */}
+      <ImageChoice images={images} width={107} height={107}/>
+      <ImageCell
+        image={images[0]}
+        width={335}
+        height={107}
+        checkbox
+      />
     </main>
   );
 }

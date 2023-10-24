@@ -10,6 +10,7 @@ import { CheckBox } from '../Checkbox';
 interface IActiveVariant {
   [key: string]: boolean;
 }
+//TODO: вынести interface в отдельный файл
 
 export const CheckboxGroup: FC<ICheckboxProps> = ({ options }) => {
   const [activeVariants, setActiveVariant] = useState<IActiveVariant>({});
@@ -28,7 +29,12 @@ export const CheckboxGroup: FC<ICheckboxProps> = ({ options }) => {
       {options.map((variant) => (
         <label key={variant.id}>
           <StyledCheckbox active={activeVariants[variant.id]}>
-            <CheckBox onChange={handleCheckboxGroupChange} id={variant.id} checked={activeVariants[variant.id]}/>
+            <CheckBox
+              onChange={handleCheckboxGroupChange}
+              id={variant.id}
+              checked={activeVariants[variant.id]}
+              styled
+            />
             <StyledLabelText>{variant.text}</StyledLabelText>
           </StyledCheckbox>
         </label>
