@@ -1,4 +1,9 @@
-export const PALETTE = {
+
+interface IPalette {
+  [key: string]: string
+}
+
+export const PALETTE: IPalette = {
   black: '#000',
   white: '#fff',
 
@@ -11,4 +16,4 @@ export const PALETTE = {
 
   'bg-lightgray': '#F8F8F8',
   
-};
+} as const ;
