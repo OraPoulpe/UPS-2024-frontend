@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { CheckBox } from '../../../../shared/ui/inputs/Checkbox';
+import { CheckBox } from '../../inputs/Checkbox';
 import { StyledImage, StyledImageCell, StyledLabel } from './ImageCell.style';
 import { IImageCellProps } from './ImageCell.declaration';
 import Image from 'next/image';
 import { CheckIcon } from '@/shared/ui/icons/CheckIcon';
-import styles from './ImageCell.module.scss'
+import styles from './ImageCell.module.scss';
 
 export const ImageCell: FC<IImageCellProps> = ({
   active = false,

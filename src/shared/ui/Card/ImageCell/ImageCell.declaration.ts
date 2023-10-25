@@ -1,4 +1,4 @@
-import { IImage } from '../../../../shared/ui/inputs/ImageChoice/ImageChoice.declaration';
+import { IImage } from '../../inputs/ImageChoice/ImageChoice.declaration';
 
 export interface IImageCellStyle {
   active: boolean;

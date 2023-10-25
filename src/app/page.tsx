@@ -17,7 +17,9 @@ import {
   IImage,
   IImageChoiceProps,
 } from '@/shared/ui/inputs/ImageChoice/ImageChoice.declaration';
-import { ImageCell } from '@/entities/search/components/ImageCell';
+import { ImageCell } from '@/shared/ui/Card/ImageCell';
+import { TextInput } from '@/shared/ui/inputs/TextInput';
+import { SearchInput } from '@/shared/ui/inputs/SearchInput';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -87,13 +89,9 @@ export default function Home() {
       </div>
       {/* <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/> */}
       {/* <CheckboxGroup options={Intakes}/> */}
-      <ImageChoice images={images} width={107} height={107}/>
-      <ImageCell
-        image={images[0]}
-        width={335}
-        height={107}
-        checkbox
-      />
+      {/* <ImageChoice images={images} width={107} height={107} /> */}
+      {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
+      <SearchInput />
     </main>
   );
 }
