@@ -20,6 +20,8 @@ import {
 import { ImageCell } from '@/shared/ui/Card/ImageCell';
 import { TextInput } from '@/shared/ui/inputs/TextInput';
 import { SearchInput } from '@/shared/ui/inputs/SearchInput';
+import { TagsInput } from '@/shared/ui/inputs/TagsInput';
+import { products } from '../../public/data/products/products';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -81,6 +83,8 @@ export default function Home() {
     { src: br_3.src, name: 'Йогурт', id: 6 },
   ];
 
+
+
   return (
     <main>
       Main Page
@@ -91,7 +95,7 @@ export default function Home() {
       {/* <CheckboxGroup options={Intakes}/> */}
       {/* <ImageChoice images={images} width={107} height={107} /> */}
       {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
-      <SearchInput />
+      <TagsInput data={products}/>
     </main>
   );
 }
