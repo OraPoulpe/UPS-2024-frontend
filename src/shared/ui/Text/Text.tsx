@@ -7,7 +7,7 @@ export const Text: FC<ITextProps> = ({
   children,
   type,
   size,
-  weight,
+  weight='normal',
   color,
 }) => {
   switch (type) {

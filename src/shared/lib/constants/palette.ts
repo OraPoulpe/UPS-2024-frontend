@@ -13,6 +13,7 @@ export const PALETTE: IPalette = {
   'text-black': '#272727',
   'text-input-black': '#252525',
   'text-placeholder-gray': '#828282',
+  'text-light-gray': '#9C9C9C',
 
   'bg-lightgray': '#F8F8F8',
   

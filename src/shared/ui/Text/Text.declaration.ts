@@ -8,12 +8,12 @@ export interface ITextProps {
   children: ReactNode;
   type: TTextType;
   size: number;
-  weight?: number;
+  weight?: number|string;
   color?: string;
 }
 
 export interface ITextStyle {
   size: number;
-  weight?: number;
+  weight?: number|string;
   color?: string;
 }

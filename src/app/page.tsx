@@ -22,6 +22,7 @@ import { TextInput } from '@/shared/ui/inputs/TextInput';
 import { SearchInput } from '@/shared/ui/inputs/SearchInput';
 import { TagsInput } from '@/shared/ui/inputs/TagsInput';
 import { products } from '../../public/data/products/products';
+import { NavBar } from '@/widgets/NavBar';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -95,7 +96,8 @@ export default function Home() {
       {/* <CheckboxGroup options={Intakes}/> */}
       {/* <ImageChoice images={images} width={107} height={107} /> */}
       {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
-      <TagsInput data={products}/>
+      {/* <TagsInput data={products}/> */}
+      <NavBar/>
     </main>
   );
 }
