@@ -3,6 +3,8 @@ interface IPalette {
   [key: string]: string
 }
 
+//TODO:  typing Palette 
+
 export const PALETTE: IPalette = {
   black: '#000',
   white: '#fff',
