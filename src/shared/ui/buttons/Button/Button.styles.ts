@@ -29,8 +29,7 @@ const PRIMARY_BUTTON_STYLES = css<IButtonProps>`
 
 const SECONDARY_BUTTON_STYLES = css<IButtonProps>`
   background: ${PALETTE['white']};
-  color: ${PALETTE['text-button-gray']};
-  border: 2px solid ${PALETTE['bg-button-border-gray']};
+  color: ${PALETTE['text-black']};
 
   transition: all 0.2s;
 
@@ -40,7 +39,6 @@ const SECONDARY_BUTTON_STYLES = css<IButtonProps>`
   }
 
   &:hover:not(:disabled) {
-    border: 2px solid ${PALETTE['bg-button-border-hover-red']};
     cursor: pointer;
   }
 
@@ -70,6 +68,11 @@ export const StyledButton = styled.button<IButtonProps>`
   letter-spacing: 0.3;
   padding: 14px auto;
   border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 
   ${({ variant }) => BUTTON_VARIANTS_MAP[variant || PRIMARY_VARIANT]};
 `;

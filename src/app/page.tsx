@@ -27,6 +27,10 @@ import { ProgressBar } from '@/shared/ui/ProgressBar';
 import { Button } from '@/shared/ui/buttons/Button';
 import { Toggle } from '@/shared/ui/inputs/Toggle';
 
+// import googleIc from '../../public/icons/GoogleIcon.svg';
+import IconSettings from '../../public/icons/IconSetting.svg';
+import { IconButton } from '@/shared/ui/buttons/IconButton';
+
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
 
@@ -99,10 +103,10 @@ export default function Home() {
       {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
       {/* <TagsInput data={products}/> */}
       {/* <ProgressBar numberOfSteps={10} currentStep={4} /> */}
+      {/* <Button onClick={() => {}} variant='secondary'>Folow<Image src={googleIc} alt={''}/></Button> */}
 
-      <Button onClick={() => {}}>Folow</Button>
-
-      <Toggle/>
+      <IconButton onClick={() => {}}><Image src={IconSettings} alt={''}/></IconButton>
+      <Toggle />
     </div>
   );
 }
