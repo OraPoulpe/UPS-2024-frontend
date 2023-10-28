@@ -18,5 +18,7 @@ export const PALETTE: IPalette = {
   'text-light-gray': '#9C9C9C',
 
   'bg-lightgray': '#F8F8F8',
+
+  'gray': '#dadada'
   
 } as const ;

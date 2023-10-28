@@ -10,7 +10,7 @@ export const StyledProgressBar = styled.div`
 `;
 
 export const StyledStep = styled.div<IStepStyle>`
-  width: 10%;
+  width: ${({ numberOfSteps }) => 100 / (numberOfSteps + 2)}%;
   height: 8px;
   border-radius: 5px;
   background-color: ${({ isActive }) =>

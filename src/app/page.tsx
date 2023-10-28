@@ -24,6 +24,8 @@ import { TagsInput } from '@/shared/ui/inputs/TagsInput';
 import { products } from '../../public/data/products/products';
 import { NavBar } from '@/widgets/NavBar';
 import { ProgressBar } from '@/shared/ui/ProgressBar';
+import { Button } from '@/shared/ui/buttons/Button';
+import { Toggle } from '@/shared/ui/inputs/Toggle';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -85,10 +87,8 @@ export default function Home() {
     { src: br_3.src, name: 'Йогурт', id: 6 },
   ];
 
-
-
   return (
-    <main>
+    <div>
       Main Page
       <div className="w-160">
         {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
@@ -98,8 +98,11 @@ export default function Home() {
       {/* <ImageChoice images={images} width={107} height={107} /> */}
       {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
       {/* <TagsInput data={products}/> */}
-      <ProgressBar numberOfSteps={9} currentStep={3}/>
+      {/* <ProgressBar numberOfSteps={10} currentStep={4} /> */}
 
-    </main>
+      <Button onClick={() => {}}>Folow</Button>
+
+      <Toggle/>
+    </div>
   );
 }

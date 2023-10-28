@@ -10,10 +10,10 @@ export const ProgressBar: FC<IProgressBarProps> = ({
   const notActiveSteps = [];
 
   for (let i = 1; i <= currentStep; i++) {
-    activeSteps.push(<StyledStep key={i} isActive={true} />);
+    activeSteps.push(<StyledStep numberOfSteps={numberOfSteps} key={i} isActive={true} />);
   }
   for (let i = 1; i <= numberOfSteps - currentStep; i++) {
-    notActiveSteps.push(<StyledStep key={i} isActive={false} />);
+    notActiveSteps.push(<StyledStep numberOfSteps={numberOfSteps} key={i} isActive={false} />);
   }
   return (
     <StyledProgressBar>
