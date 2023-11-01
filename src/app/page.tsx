@@ -30,6 +30,7 @@ import { Toggle } from '@/shared/ui/inputs/Toggle';
 // import googleIc from '../../public/icons/GoogleIcon.svg';
 import IconSettings from '../../public/icons/IconSetting.svg';
 import { IconButton } from '@/shared/ui/buttons/IconButton';
+import { Swiper } from '@/widgets/Swiper';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -107,6 +108,7 @@ export default function Home() {
 
       <IconButton onClick={() => {}}><Image src={IconSettings} alt={''}/></IconButton>
       <Toggle />
+      <Swiper/>
     </div>
   );
 }

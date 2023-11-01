@@ -2,7 +2,7 @@ import { css, styled } from 'styled-components';
 import { IToggleStyle } from './Toggle.declaration';
 import { PALETTE } from '@/shared/lib/constants';
 
-export const StyledToggleSpan = styled.span`
+export const StyledToggleSpan = styled.span<IToggleStyle>`
   width: 23px;
   height: 23px;
   background-color: ${PALETTE['bg-lightgray']};
@@ -11,14 +11,13 @@ export const StyledToggleSpan = styled.span`
   left: 1px;
 
   transition: 0.3s ease;
+
+  transform: ${({ isActive }) =>
+    isActive ? 'translateX(20px)' : 'translateX(0)'};
 `;
 
 const ACTIVE_TOGGLE_STYLE = css`
   background-color: ${PALETTE['primary-orange']};
-
-  ${StyledToggleSpan} {
-    transform: translateX(20px);
-  }
 `;
 
 const NOT_ACTIVE_TOGGLE_STYLE = css`
