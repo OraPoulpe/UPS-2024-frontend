@@ -12,8 +12,8 @@ export const StyledToggleSpan = styled.span<IToggleStyle>`
 
   transition: 0.3s ease;
 
-  transform: ${({ isActive }) =>
-    isActive ? 'translateX(20px)' : 'translateX(0)'};
+  transform: ${({ checked }) =>
+    checked ? 'translateX(20px)' : 'translateX(0)'};
 `;
 
 const ACTIVE_TOGGLE_STYLE = css`
@@ -37,8 +37,8 @@ export const StyledToggleWrap = styled.div<IToggleStyle>`
 
   transition: 0.3s ease;
 
-  ${({ isActive }) =>
-    isActive ? ACTIVE_TOGGLE_STYLE : NOT_ACTIVE_TOGGLE_STYLE}
+  ${({ checked }) =>
+    checked ? ACTIVE_TOGGLE_STYLE : NOT_ACTIVE_TOGGLE_STYLE}
 `;
 
 export const StyledToggle = styled.input`

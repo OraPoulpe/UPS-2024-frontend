@@ -6,5 +6,5 @@ export interface IToggleProps {
 }
 
 export interface IToggleStyle {
-    isActive: boolean
+    checked: boolean
 }

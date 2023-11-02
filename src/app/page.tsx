@@ -28,9 +28,11 @@ import { Button } from '@/shared/ui/buttons/Button';
 import { Toggle } from '@/shared/ui/inputs/Toggle';
 
 // import googleIc from '../../public/icons/GoogleIcon.svg';
-import IconSettings from '../../public/icons/IconSetting.svg';
+import IconSetting from '../../public/icons/IconSetting.svg';
 import { IconButton } from '@/shared/ui/buttons/IconButton';
 import { Swiper } from '@/widgets/Swiper';
+import { dishes } from '../../public/data/dishes/dishes';
+import { DishCard } from '@/widgets/Swiper/ui/components/DishCard/DishCard';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -93,11 +95,9 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       Main Page
-      <div className="w-160">
-        {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
-      </div>
+      {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
       {/* <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/> */}
       {/* <CheckboxGroup options={Intakes}/> */}
       {/* <ImageChoice images={images} width={107} height={107} /> */}
@@ -105,10 +105,13 @@ export default function Home() {
       {/* <TagsInput data={products}/> */}
       {/* <ProgressBar numberOfSteps={10} currentStep={4} /> */}
       {/* <Button onClick={() => {}} variant='secondary'>Folow<Image src={googleIc} alt={''}/></Button> */}
-
-      <IconButton onClick={() => {}}><Image src={IconSettings} alt={''}/></IconButton>
+      <IconButton onClick={() => {}}>
+        <Image src={IconSetting} alt={''} />
+      </IconButton>
       <Toggle />
-      <Swiper/>
+      <Swiper />
+
+      {/* <DishCard {...dishes[0]}/> */}
     </div>
   );
 }

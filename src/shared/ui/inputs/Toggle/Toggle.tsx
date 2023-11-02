@@ -15,7 +15,6 @@ export const Toggle: FC<IToggleProps> = ({
   styled = false,
 }) => {
   const [enabled, setEnabled] = useState(false);
-  console.log(enabled);
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const input = e.target as HTMLInputElement;
@@ -24,12 +23,12 @@ export const Toggle: FC<IToggleProps> = ({
 
   return (
     <label>
-      <StyledToggleWrap isActive={enabled}>
+      <StyledToggleWrap checked={enabled}>
         <StyledToggle
           type="checkbox"
           onChange={(e) => handleOnChange(e)}
         />
-        <StyledToggleSpan isActive={enabled}/>
+        <StyledToggleSpan checked={enabled}/>
       </StyledToggleWrap>
     </label>
   );

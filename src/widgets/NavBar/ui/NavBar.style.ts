@@ -15,7 +15,8 @@ export const StyledNavBar = styled.footer`
   position: fixed;
   bottom: 0px;
   display: flex;
-  width: 100vw;
+  height: 10%;
+  width: 100%;
   justify-content: space-around;
   padding: 15px 15px 25px 15px;
 `;

@@ -1,28 +1,21 @@
-import React, { useState, Children } from 'react';
+import React, { useState, Children, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Card } from '../Card/Card';
+import { IStackProps } from './Stack.declaration';
+import { Frame } from './Stack.style';
 
-// basic default styles for container
-const Frame = styled.div`
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-export const Stack = ({ onVote, children, ...props }) => {
-  const [stack, setStack] = useState(Children.toArray(children));
+export const Stack: FC<IStackProps> = ({ onVote, children }) => {
+  // const [stack, setStack] = useState<ReactNode[]>(Children.toArray(children));
+  const [stack, setStack] = useState<ReactNode[]>(children);
 
   // return new array with last item removed
-  const pop = (array) => {
+  const pop = (array: ReactNode[]) => {
     return array.filter((_, index) => {
       return index < array.length - 1;
     });
   };
 
-  const handleVote = (item, vote) => {
+  const handleVote = (item: ReactNode, vote: boolean) => {
     // update the stack
     let newStack = pop(stack);
     setStack(newStack);
@@ -32,21 +25,19 @@ export const Stack = ({ onVote, children, ...props }) => {
   };
 
   return (
-    <>
-      <Frame {...props}>
-        {stack.map((item, index) => {
-          let isTop = index === stack.length - 1;
-          return (
-            <Card
-              drag={isTop} // Only top card is draggable
-              key={item.key || index}
-              onVote={(result) => handleVote(item, result)}
-            >
-              {item}
-            </Card>
-          );
-        })}
-      </Frame>
-    </>
+    <Frame>
+      {stack.map((item, index) => {
+        let isTop = index === stack.length - 1;
+        return (
+          <Card
+            drag={isTop} // Only top card is draggable
+            key={index}
+            onVote={(result) => handleVote(item, result)}
+          >
+            {item}
+          </Card>
+        );
+      })}
+    </Frame>
   );
 };

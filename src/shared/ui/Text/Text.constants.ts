@@ -5,6 +5,7 @@ export const H4_TEXT = 'h4';
 export const H5_TEXT = 'h5';
 export const H6_TEXT = 'h6';
 export const P_TEXT = 'p';
+export const SPAN_TEXT = 'span';
 
 
 export const TEXT_TYPES = [
@@ -15,5 +16,6 @@ export const TEXT_TYPES = [
     H5_TEXT,
     H6_TEXT,
     P_TEXT,
+    SPAN_TEXT
 ] as const;
 

@@ -4,7 +4,7 @@ export interface IProgressBarProps {
 }
 
 export interface IStepStyle {
-    isActive: boolean;
+    active: boolean;
     numberOfSteps: number;
 
 }

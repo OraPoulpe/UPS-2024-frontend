@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { IIconsProps } from '../NavigationIcons.declaration';
 
-export const SearchIcons: FC<IIconsProps> = ({ color, isActive }) => {
-  if (isActive) {
+export const SearchIcons: FC<IIconsProps> = ({ color, active }) => {
+  if (active) {
     return (
       <svg
         width="24"
@@ -20,17 +20,17 @@ export const SearchIcons: FC<IIconsProps> = ({ color, isActive }) => {
               r="8.98856"
               fill="#FFA011"
               stroke="#FFA011"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Line_181"
               d="M18.0183 18.4852L21.5423 22.0001"
               stroke="#FFA011"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         </g>
@@ -50,16 +50,16 @@ export const SearchIcons: FC<IIconsProps> = ({ color, isActive }) => {
           cy="11.7666"
           r="8.98856"
           stroke="#9C9C9C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M18.0183 18.4851L21.5423 22"
           stroke="#9C9C9C"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     );

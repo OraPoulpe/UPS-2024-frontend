@@ -12,7 +12,7 @@ import { StyledNavigationIcons } from './NavigationIcons.style';
 
 export const NavigationIcons: FC<INavigationIconsProps> = ({
   color,
-  isActive,
+  active,
   variant,
 }) => {
   return (
@@ -20,13 +20,13 @@ export const NavigationIcons: FC<INavigationIconsProps> = ({
       {(() => {
         switch (variant) {
           case HOME_VARIANT:
-            return <HomeIcons isActive={isActive} />;
+            return <HomeIcons active={active} />;
           case SEARCH_VARIANT:
-            return <SearchIcons isActive={isActive} />;
+            return <SearchIcons active={active} />;
           case FRIDGE_VARIANT:
-            return <FridgeIcons isActive={isActive} />;
+            return <FridgeIcons active={active} />;
           case PROFILE_VARIANT:
-            return <ProfileIcons isActive={isActive} />;
+            return <ProfileIcons active={active} />;
         }
       })()}
     </StyledNavigationIcons>

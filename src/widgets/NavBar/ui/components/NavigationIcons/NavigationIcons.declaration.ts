@@ -14,11 +14,11 @@ export type TIconVariant = (typeof ICON_VARIANTS)[number];
 
 export interface INavigationIconsProps {
   color?: string;
-  isActive: boolean;
+  active: boolean;
   variant: TIconVariant;
 }
 
 export interface IIconsProps {
   color?: string;
-  isActive: boolean;
+  active: boolean;
 }

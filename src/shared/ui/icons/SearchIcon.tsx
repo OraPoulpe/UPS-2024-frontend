@@ -14,17 +14,17 @@ export const SearchIcons = () => {
           cy="8.5"
           r="7.5"
           stroke="#9C9C9C"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Line_181"
           d="M13.995 14.0742L16.9998 16.9999"
           stroke="#9C9C9C"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

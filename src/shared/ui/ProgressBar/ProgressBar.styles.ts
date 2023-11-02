@@ -13,6 +13,6 @@ export const StyledStep = styled.div<IStepStyle>`
   width: ${({ numberOfSteps }) => 100 / (numberOfSteps + 2)}%;
   height: 8px;
   border-radius: 5px;
-  background-color: ${({ isActive }) =>
-    isActive ? PALETTE['primary-orange'] : PALETTE['bg-lightgray']};
+  background-color: ${({ active }) =>
+    active ? PALETTE['primary-orange'] : PALETTE['bg-lightgray']};
 `;
