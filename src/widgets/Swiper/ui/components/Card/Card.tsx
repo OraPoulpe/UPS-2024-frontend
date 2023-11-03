@@ -4,7 +4,7 @@ import { StyledCard } from './Card.style';
 import { ICardProps, TDirection } from './Card.declaration';
 import { LEFT_DIRECTION, RIGHT_DIRECTION } from './Card.constants';
 
-export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
+export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
   const cardElem: React.RefObject<HTMLDivElement> = useRef(null);
 
   const x = useMotionValue(0);
@@ -36,7 +36,7 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
 
   // determine direction of swipe based on velocity
   const getDirection = () => {
-    console.log('velg', velocity);
+    // console.log('velg', velocity);
 
     return velocity >= 1
       ? RIGHT_DIRECTION
@@ -64,11 +64,8 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
   };
 
   const flyAway = (min: number) => {
-    console.log("direct before",direction);
-//TODO: flyaway
     if (direction && Math.abs(velocity) > min) {
-      console.log('vel', velocity);
-      console.log('el', cardElem.current);
+  
       setConstrained(false);
       cardElem.current &&
         controls.start({
@@ -83,16 +80,11 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
     }
   };
 
-  // console.log(velocity)
-  console.log('dir', direction);
+ 
 
   useEffect(() => {
-    const childElement = cardElem.current;
-    if (childElement) {
-      console.log(cardElem);
-      childElement.addEventListener('keydown', handleKeyDown as EventListener);
-    }
-
+    //TODO: optimize render
+    cardElem.current?.focus();
     const unsubscribeX = x.onChange(() => {
       if (cardElem.current) {
         const childNode = cardElem.current;
@@ -101,14 +93,11 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
         result !== undefined && onVote(result);
       }
     });
-
     return () => {
       unsubscribeX();
-      if (childElement) {
-        childElement.removeEventListener('keydown', handleKeyDown);
-      }
     };
   });
+
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     console.log(e.key);
     if (e.key === 'ArrowRight') {
@@ -124,6 +113,9 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
 
   return (
     <StyledCard
+      onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+        handleKeyDown(e);
+      }}
       animate={controls}
       dragConstraints={constrained && { left: 0, right: 0, top: 0, bottom: 0 }}
       dragElastic={1}

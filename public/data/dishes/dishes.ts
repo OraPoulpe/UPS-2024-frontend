@@ -104,7 +104,7 @@ export const dishes: IDish[] = [
   },
   {
     id: 8,
-    name: 'Греческий салат',
+    name: 'ммм САЛАТИК',
     products: [
       'огурцы',
       'помидоры',
