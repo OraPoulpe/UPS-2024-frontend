@@ -1,0 +1,26 @@
+.searchWrap {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  overflow: hidden;
+  
+  height: 60px;
+  width: 100%;
+  max-width: 1060px;
+
+
+  .inputWrap {
+    width: 100%;
+    padding: 18px 20px;
+    display: flex;
+    gap: 6px;
+
+    .searchIcon {
+      width: 24px;
+      height: 24px;
+    }
+
+    
+  }
+}

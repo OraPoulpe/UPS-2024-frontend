@@ -1,0 +1,27 @@
+.button {
+  max-width: 200px;
+  padding: 20px 70px;
+  height: 60px;
+  font-family: Mont;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: white;
+  background-color: #fea300;
+
+  &:active {
+    transform: scale(0.98);
+    filter: brightness(95%);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media all and (max-width: 600px) {
+    display: none;
+  }
+
+  
+}

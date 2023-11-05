@@ -1,0 +1,85 @@
+.infoCardWrap {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1060px;
+  height: 180px;
+
+  background-color: white;
+  box-shadow: 5px 5px 25px 0px rgba(121, 121, 121, 0.15);
+  border-radius: 20px;
+  margin-top: 40px;
+  padding: 30px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media all and (max-width: 600px) {
+    background-image: url('../../image/vectors/BackgroundVector.svg');
+    background-repeat: round;
+    position: relative;
+    background-color: #fff3dd;
+    padding: 0;
+    height: 136px;
+  }
+
+  .text {
+    width: 292px;
+    color: #272727;
+    font-family: Mont;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    margin-bottom: 10px;
+
+    @media all and (max-width: 600px) {
+      margin: 20px;
+      width: 177px;
+      line-height: 120%;
+      .grayText {
+        color: #9f9f9f;
+      }
+    }
+  }
+
+  .bt {
+    border-radius: 20px;
+    overflow: hidden;
+    width: fit-content;
+  }
+  .vectorWrap {
+    display: flex;
+    align-items: center;
+
+    .WomenVectorWithBG {
+      width: 209px;
+      height: 157px;
+    }
+    .WomenVector1 {
+      width: 75px;
+      height: 55px;
+      transform: scale(-1, 1);
+      margin-left: -25px;
+    }
+    .WomenVector2 {
+      width: 125px;
+      height: 93px;
+    }
+
+    @media all and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .ProfileWomenVector {
+    margin-right: 15px;
+    width: 149px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media all and (min-width: 600px) {
+      display: none;
+    }
+  }
+}

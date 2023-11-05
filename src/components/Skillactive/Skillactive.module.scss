@@ -1,0 +1,10 @@
+.SkillactiveVector {
+  max-width: 400px;
+  max-height: 70px;
+  margin-bottom: 75px;
+
+  @media all and (max-width: 420px) {
+    width: 189px;
+    height: 34px;
+  }
+}
