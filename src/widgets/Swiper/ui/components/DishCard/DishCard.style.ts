@@ -16,4 +16,6 @@ export const StyledDishCardWrap = styled.div<WrapStyle>`
   background-image: url(${({ imagesrc }) => imagesrc});
   background-size: cover;
   background-repeat: no-repeat;
+
+
 `;

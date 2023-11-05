@@ -1,10 +1,12 @@
+'use client';
+
 import React, { useRef, useEffect, useState, KeyboardEvent, FC } from 'react';
 import { motion, useMotionValue, useAnimation } from 'framer-motion';
 import { StyledCard } from './Card.style';
 import { ICardProps, TDirection } from './Card.declaration';
 import { LEFT_DIRECTION, RIGHT_DIRECTION } from './Card.constants';
 
-export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
+export const Card: FC<ICardProps> = ({ children, onVote, drag }) => {
   const cardElem: React.RefObject<HTMLDivElement> = useRef(null);
 
   const x = useMotionValue(0);
@@ -16,17 +18,22 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
 
   const [velocity, setVelocity] = useState<number>(0);
 
+  const [test, setTest] = useState<boolean>(false);
+
   const getVote = (childNode: HTMLElement, parentNode: HTMLElement | null) => {
     const childRect = childNode.getBoundingClientRect();
 
     if (parentNode !== null) {
       const parentRect = parentNode.getBoundingClientRect();
-      // console.log("chiled",childRect.x+childRect.width)
-      // console.log("pare",parentRect.x)
+      const centerChild = (childRect.left + childRect.right) / 2;
+      const centerParent = (parentRect.left + parentRect.right) / 2;
+      // console.log("chiled",(childRect.left+childRect.right)/2)
+      // console.log('chiled', childRect.width);
+      // console.log('pare', parentRect.right);
       let result =
-        parentRect.left >= childRect.right
+        centerChild <= parentRect.right / 2 - childRect.width + 80
           ? false
-          : parentRect.right <= childRect.left
+          : centerChild >= parentRect.right / 2 + childRect.width - 80
           ? true
           : undefined;
       return result;
@@ -64,27 +71,27 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
   };
 
   const flyAway = (min: number) => {
-    if (direction && Math.abs(velocity) > min) {
-  
+    console.log('direction before', direction);
+    console.log('velocity', velocity);
+    if (Math.abs(velocity) > min) {
       setConstrained(false);
-      cardElem.current &&
-        controls.start({
-          x: flyAwayDistance(direction),
-        });
-    } else {
-      cardElem.current &&
-        controls.start({
-          x: 0,
-          y: 0,
-        });
+      // cardElem.current && console.log(direction);
+      console.log('controls start', velocity);
+      setTest(true);
+      console.log('test', test);
+      controls.start({
+        x: flyAwayDistance(direction),
+        speed: velocity,
+      });
     }
   };
 
- 
+  console.log("direction always", direction);
+
 
   useEffect(() => {
     //TODO: optimize render
-    cardElem.current?.focus();
+    // cardElem.current?.focus();
     const unsubscribeX = x.onChange(() => {
       if (cardElem.current) {
         const childNode = cardElem.current;
@@ -93,13 +100,10 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
         result !== undefined && onVote(result);
       }
     });
-    return () => {
-      unsubscribeX();
-    };
+    return () => unsubscribeX();
   });
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    console.log(e.key);
     if (e.key === 'ArrowRight') {
       controls.start({
         x: flyAwayDistance('right'),
@@ -117,15 +121,17 @@ export const Card: FC<ICardProps> = ({ children, onVote, drag, key }) => {
         handleKeyDown(e);
       }}
       animate={controls}
-      dragConstraints={constrained && { left: 0, right: 0, top: 0, bottom: 0 }}
+      // dragSnapToOrigin
+      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       dragElastic={1}
       ref={cardElem}
       style={{ x }}
       onDrag={getTrajectory}
-      onDragEnd={() => flyAway(100)}
-      whileTap={{ scale: 1.1 }}
-      drag={drag}
+      onDragEnd={() => flyAway(10)}
+      // whileTap={{ scale: 1.1 }}
+      drag={drag ? 'x' : false}
     >
+      
       {children}
     </StyledCard>
   );

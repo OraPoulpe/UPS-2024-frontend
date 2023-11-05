@@ -33,6 +33,10 @@ import { IconButton } from '@/shared/ui/buttons/IconButton';
 import { Swiper } from '@/widgets/Swiper';
 import { dishes } from '../../public/data/dishes/dishes';
 import { DishCard } from '@/widgets/Swiper/ui/components/DishCard/DishCard';
+import { HomePage } from '@/pagesLayer/homePage/HomePage';
+
+import welcome from '../../../public/images/Welcome.svg'
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [test, setTest] = useState([300, 700]);
@@ -94,24 +98,32 @@ export default function Home() {
     { src: br_3.src, name: 'Йогурт', id: 6 },
   ];
 
-  return (
-    <div style={{ height: '100%' }}>
-      Main Page
-      {/* <RangeInput min={150} max={2000} value={test} onChange={setTest} /> */}
-      {/* <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/> */}
-      {/* <CheckboxGroup options={Intakes}/> */}
-      {/* <ImageChoice images={images} width={107} height={107} /> */}
-      {/* <ImageCell image={images[0]} width={335} height={107} checkbox /> */}
-      {/* <TagsInput data={products}/> */}
-      {/* <ProgressBar numberOfSteps={10} currentStep={4} /> */}
-      {/* <Button onClick={() => {}} variant='secondary'>Folow<Image src={googleIc} alt={''}/></Button> */}
-      <IconButton onClick={() => {}}>
-        <Image src={IconSetting} alt={''} />
-      </IconButton>
-      <Toggle />
-      <Swiper />
+  const router = useRouter();
+  // router.push('/home')
 
-      {/* <DishCard {...dishes[0]}/> */}
-    </div>
+  return (
+    <HomePage />
+    // <div
+    //   className="w-full h-full overflow-hidden"
+    //   onClick={() => {
+    //     router.push('/auth/login');
+    //   }}
+    // >
+    //   <Image src={welcome} width={500} height={1000} alt="" />
+    // </div>
+    // <div style={{ height: '100%' }}>
+    //   <RangeInput min={150} max={2000} value={test} onChange={setTest} />
+    //   <OneRadioGroup options={OptionsData} value={radio} onChange={handleOnChange}/>
+    //   <CheckboxGroup options={Intakes}/>
+    //   <ImageChoice images={images} width={107} height={107} />
+    //   <ImageCell image={images[0]} width={335} height={107} checkbox />
+    //   <Button onClick={() => {}} variant='secondary'>Folow<Image src={googleIc} alt={''}/></Button>
+    //   <IconButton onClick={() => {}}>
+    //     <Image src={IconSetting} alt={''} />
+    //   </IconButton>
+    //   <Toggle />
+
+    //   <DishCard {...dishes[0]}/>
+    // </div>
   );
 }

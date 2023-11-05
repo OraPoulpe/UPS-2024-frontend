@@ -1,0 +1,1 @@
+export { PriceOfDish } from './PriceOfDish'

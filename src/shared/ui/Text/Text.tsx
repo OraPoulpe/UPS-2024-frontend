@@ -1,14 +1,33 @@
 import { FC } from 'react';
 import { ITextProps } from './Text.declaration';
-import { H1_TEXT, H2_TEXT, H3_TEXT, H4_TEXT, H5_TEXT, H6_TEXT, P_TEXT, SPAN_TEXT } from './Text.constants';
-import { StyledTextH1, StyledTextH2, StyledTextH3, StyledTextH4, StyledTextH5, StyledTextH6, StyledTextP, StyledTextSpan } from './Text.style';
+import {
+  H1_TEXT,
+  H2_TEXT,
+  H3_TEXT,
+  H4_TEXT,
+  H5_TEXT,
+  H6_TEXT,
+  P_TEXT,
+  SPAN_TEXT,
+} from './Text.constants';
+import {
+  StyledTextH1,
+  StyledTextH2,
+  StyledTextH3,
+  StyledTextH4,
+  StyledTextH5,
+  StyledTextH6,
+  StyledTextP,
+  StyledTextSpan,
+} from './Text.style';
+import { PALETTE } from '@/shared/lib/constants';
 
 export const Text: FC<ITextProps> = ({
   children,
   type,
   size,
   weight = 'normal',
-  color,
+  color = PALETTE['text-black'],
 }) => {
   switch (type) {
     case H1_TEXT:

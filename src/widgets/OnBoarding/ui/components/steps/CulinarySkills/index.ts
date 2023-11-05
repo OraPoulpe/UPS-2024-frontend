@@ -1,0 +1,1 @@
+export { CulinarySkills } from './CulinarySkills'

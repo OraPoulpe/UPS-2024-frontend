@@ -30,6 +30,7 @@ export const ImageChoice: FC<IImageChoiceProps> = ({
 
         return (
           <ImageCell
+          key={image.id}
             active={active}
             image={image}
             onChange={handleImageChoiceChange}

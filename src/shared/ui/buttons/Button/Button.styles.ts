@@ -12,17 +12,15 @@ const PRIMARY_BUTTON_STYLES = css<IButtonProps>`
   transition: all 0.2s;
 
   &:active:not(:disabled) {
-    transform: scale(0.98);
-    filter: brightness(95%);
+      transform: scale(0.98);
+      filter: brightness(95%);
   }
 
   &:hover:not(:disabled) {
-    background: ${PALETTE['bg-button-hover-red']};
     cursor: pointer;
   }
 
   &:disabled {
-    background: ${PALETTE['bg-button-disabled-lightred']};
     cursor: not-allowed;
   }
 `;
@@ -43,7 +41,6 @@ const SECONDARY_BUTTON_STYLES = css<IButtonProps>`
   }
 
   &:disabled {
-    color: ${PALETTE['text-button-lightgray']};
     cursor: not-allowed;
   }
 `;

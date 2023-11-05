@@ -6,13 +6,14 @@ export const StyledTagsInput = styled.div`
   flex-direction: column;
   gap: 10px;
   align-items: center;
-`;
+  `;
 export const StyledTextWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   max-width: 335px;
+  height: 100%;
 `;
 
 export const StyledListVariants = styled.ul`

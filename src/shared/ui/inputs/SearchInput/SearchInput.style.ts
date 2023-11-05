@@ -7,4 +7,5 @@ export const StyledSearchInput = styled.div`
   align-items: center;
   padding: 0px 20px;
   background-color: ${PALETTE['bg-lightgray']};
+  border-radius: 22px;
 `;

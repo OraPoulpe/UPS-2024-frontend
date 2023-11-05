@@ -1,4 +1,4 @@
-import React, { useState, Children, FC, ReactNode } from 'react';
+import React, { useState, Children, FC, ReactNode, ReactElement } from 'react';
 import styled from 'styled-components';
 import { Card } from '../Card/Card';
 import { IStackProps } from './Stack.declaration';
@@ -6,16 +6,16 @@ import { Frame } from './Stack.style';
 
 export const Stack: FC<IStackProps> = ({ onVote, children }) => {
   // const [stack, setStack] = useState<ReactNode[]>(Children.toArray(children));
-  const [stack, setStack] = useState<ReactNode[]>(children);
+  const [stack, setStack] = useState<ReactElement[]>(children);
 
   // return new array with last item removed
-  const pop = (array: ReactNode[]) => {
+  const pop = (array: ReactElement[]) => {
     return array.filter((_, index) => {
       return index < array.length - 1;
     });
   };
 
-  const handleVote = (item: ReactNode, vote: boolean) => {
+  const handleVote = (item: ReactElement, vote: boolean) => {
     // update the stack
     let newStack = pop(stack);
     setStack(newStack);

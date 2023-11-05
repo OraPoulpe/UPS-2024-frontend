@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 export interface IStackProps {
     children: React.ReactElement[];
-    onVote: (item: ReactNode, vote: boolean) => void;
+    onVote: (item: ReactElement, vote: boolean) => void;
 }

@@ -63,8 +63,8 @@ export const TagsInput: FC<ITagsInputProps> = ({ data }) => {
       <SearchInput onChange={handleChange} />
       <StyledSelectsWrap>
         {selects.length != 0 &&
-          selects.map((sel) => (
-            <StyledSelect>
+          selects.map((sel, index) => (
+            <StyledSelect key={index}>
               {sel.name}
               <button onClick={() => removeSelects(sel.name, sel.id)}>
                 <CrossIcon />
@@ -74,7 +74,7 @@ export const TagsInput: FC<ITagsInputProps> = ({ data }) => {
       </StyledSelectsWrap>
 
       <StyledTextWrap>
-        {valueInput === '' && selects.length !== 0 ? (
+        {valueInput === '' && selects.length === 0 ? (
           <Text type={'p'} size={14}>
             Это ваш холодильник, выберите продукты которые у вас есть чтобы
             рекомендации блюд были максимально удобными и точными для вас
@@ -92,6 +92,7 @@ export const TagsInput: FC<ITagsInputProps> = ({ data }) => {
         <StyledListVariants>
           {filteredData.map((variant) => (
             <StyledButtonAdd
+              key={variant.id}
               onClick={() => addSelect(variant.name, variant.id)}
             >
               {variant.name}

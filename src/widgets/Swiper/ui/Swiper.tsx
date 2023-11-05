@@ -6,7 +6,7 @@ import { dishes } from '../../../../public/data/dishes/dishes';
 
 export const Swiper: FC = () => {
   return (
-    <Stack onVote={(item, vote) => console.log(item.props, vote)}>
+    <Stack onVote={(item, vote) => console.log(item?.props, vote)}>
       {dishes.map((dish) => (
         <DishCard key={dish.id} {...dish} />
       ))}
